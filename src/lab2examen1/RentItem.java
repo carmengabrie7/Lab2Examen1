@@ -4,10 +4,46 @@
  */
 package lab2examen1;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author eduar
  */
-public class RentItem {
+public abstract class RentItem {
+    
+    protected int codigoItem;
+    protected String nombreItem;
+    protected double precioBaseRenta;
+    protected int cantidadCopias;
+    protected ImageIcon imagen;
+
+    public RentItem(int codigoItem, String nombreItem, double precioBaseRenta, int cantidadCopias, ImageIcon imagen) {
+        this.codigoItem = codigoItem;
+        this.nombreItem = nombreItem;
+        this.precioBaseRenta = precioBaseRenta;
+        this.cantidadCopias=0;
+        this.imagen=imagen;
+    }
+
+    public int getCodigoItem() {
+        return codigoItem;
+    }
+
+    public String getNombreItem() {
+        return nombreItem;
+    }
+
+    public double getPrecioBaseRenta() {
+        return precioBaseRenta;
+    }
+
+    @Override
+    public String toString() {
+        return "Codigo de Item: "+codigoItem+"\n Nombre de Item: "+nombreItem+"\n Precio Base Renta de Item: "+precioBaseRenta+" Cantidad de copias Disponibles: "+cantidadCopias;
+    }
+    
+    protected abstract double pagoRenta();
+          
     
 }

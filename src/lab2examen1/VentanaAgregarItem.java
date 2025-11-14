@@ -114,7 +114,6 @@ fondo.add(panelSur, BorderLayout.SOUTH);
         fondo.add(panelForm, BorderLayout.CENTER);
         fondo.add(lblImagen, BorderLayout.EAST);
 
-        // ACCIONES --------------------------------------
 
         btnImagen.addActionListener(e -> cargarImagen());
 
@@ -148,7 +147,6 @@ fondo.add(panelSur, BorderLayout.SOUTH);
             return;
         }
 
-        // VALIDAR CODIGO ÚNICO
         for (RentItem r : items) {
             if (r.getCodigoItem() == codigo) {
                 JOptionPane.showMessageDialog(this, "Código ya existe.");
@@ -156,7 +154,6 @@ fondo.add(panelSur, BorderLayout.SOUTH);
             }
         }
 
-        // CREAR OBJETO Y GUARDAR EN ARRAYLIST
         if (esMovie) {
             Movie m = new Movie(codigo, nombre, precio, copias);
             m.setIcono(imagenSeleccionada);
@@ -170,10 +167,8 @@ fondo.add(panelSur, BorderLayout.SOUTH);
 
         JOptionPane.showMessageDialog(this, "Ítem agregado correctamente.");
 
-        // ⭐ VOLVER AL MENÚ PRINCIPAL
         menu.setVisible(true);
 
-        // Cerrar esta ventana
         dispose();
 
     } catch (Exception ex) {

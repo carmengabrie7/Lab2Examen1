@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 public class Game extends RentItem implements MenuActions {
     
     private Calendar fechaPublicacion;
-    private ArrayList<String> especificaciones;
+    public ArrayList<String> especificaciones;
     
     public Game(int codigoItem, String nombreItem, double precioBaseRenta) {
         super(codigoItem, nombreItem, precioBaseRenta);
@@ -29,20 +29,28 @@ public class Game extends RentItem implements MenuActions {
         fechaPublicacion.set(Calendar.DAY_OF_MONTH, dia);
     }
     
+    public ArrayList<String> getEspecificaciones() {
+    return especificaciones;
+}
+
+    
+    
+    
     public Calendar getFechaPublicacion() {
         return fechaPublicacion;
     }
     
     @Override
-    public String toString() {
-        int year = fechaPublicacion.get(Calendar.YEAR);
-        int month = fechaPublicacion.get(Calendar.MONTH) + 1;
-        int day = fechaPublicacion.get(Calendar.DAY_OF_MONTH);
+public String toString() {
+    int year = fechaPublicacion.get(Calendar.YEAR);
+    int month = fechaPublicacion.get(Calendar.MONTH) + 1;
+    int day = fechaPublicacion.get(Calendar.DAY_OF_MONTH);
 
-        return super.toString()
-                + "\nFecha Publicación: " + day + "/" + month + "/" + year
-                + " – PS3 Game";
-    }
+    return super.toString()
+            + "\nFecha Publicación: " + day + "/" + month + "/" + year
+            + " – PS3 Game";
+}
+
     
     @Override
     public double pagoRenta(int dias) {

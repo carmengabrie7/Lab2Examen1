@@ -127,7 +127,11 @@ private ArrayList<RentItem> items;
     this.setVisible(false); // ocultamos el menú mientras rentamos
 });
 
-        btnSubmenu.addActionListener(e -> System.out.println("Submenu"));
+        btnSubmenu.addActionListener(e -> {
+    new VentanaSubmenuItem(items, this).setVisible(true);
+    this.setVisible(false);
+});
+
         btnImprimir.addActionListener(e -> {
     new VentanaImprimirTodo(items, this).setVisible(true);
     this.setVisible(false);

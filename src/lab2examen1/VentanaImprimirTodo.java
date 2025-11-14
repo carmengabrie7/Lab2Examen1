@@ -39,14 +39,12 @@ public class VentanaImprimirTodo extends JFrame {
         panelTarjetas.setLayout(new GridLayout(0, 2, 15, 15));
         panelTarjetas.setOpaque(false);
 
-        // Crear tarjetas para cada ítem
         for (RentItem r : items) {
 
             JPanel tarjeta = new JPanel(new BorderLayout());
             tarjeta.setBorder(BorderFactory.createLineBorder(new Color(80, 80, 80), 2));
             tarjeta.setBackground(Color.WHITE);
 
-            // Imagen
             JLabel lblImg = new JLabel();
             lblImg.setHorizontalAlignment(JLabel.CENTER);
 
@@ -67,28 +65,37 @@ public class VentanaImprimirTodo extends JFrame {
 
             tarjeta.add(lblImg, BorderLayout.NORTH);
 
-            // Info del ítem
             JTextArea info = new JTextArea();
             info.setEditable(false);
             info.setBackground(Color.WHITE);
             info.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 
-            String texto = "";
-            texto += "Nombre: " + r.getNombreItem() + "\n";
-            texto += "Precio Base: Lps " + r.getPrecioBaseRenta() + "\n";
-            texto += "Código: " + r.getCodigoItem() + "\n";
+      String texto = "";
+texto += "Nombre: " + r.getNombreItem() + "\n";
+texto += "Precio de renta (1 día): Lps " + r.pagoRenta(1) + "\n";
+texto += "Código: " + r.getCodigoItem() + "\n";
 
-            if (r instanceof Movie m) {
-                texto += "Estado: " + m.getEstado() + "\n";
-            } else {
-                texto += "Tipo: Videojuego\n";
-            }
+if (r instanceof Movie m) {
+    texto += "Estado: " + m.getEstado() + "\n";
+}
+else if (r instanceof Game g) {
+    texto += "Tipo: Videojuego\n";
+
+    if (!g.getEspecificaciones().isEmpty()) {
+        texto += "\nEspecificaciones:\n";
+        for (String s : g.getEspecificaciones()) {
+            texto += " - " + s + "\n";
+        }
+    } else {
+        texto += "\nEspecificaciones: (ninguna)\n";
+    }
+}
+
 
             info.setText(texto);
 
             tarjeta.add(info, BorderLayout.CENTER);
 
-            // Agregar tarjeta al panel general
             panelTarjetas.add(tarjeta);
         }
 
@@ -98,7 +105,6 @@ public class VentanaImprimirTodo extends JFrame {
         scroll.setBorder(null);
         fondo.add(scroll, BorderLayout.CENTER);
 
-        // Botón VOLVER
         JButton btnVolver = new JButton("Volver");
         btnVolver.addActionListener(e -> {
             menu.setVisible(true);

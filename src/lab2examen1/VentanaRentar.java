@@ -120,10 +120,8 @@ public class VentanaRentar extends JFrame {
                 return;
             }
 
-            // Mostrar texto
             lblDatos.setText("<html>" + itemEncontrado.toString().replace("\n", "<br>") + "</html>");
 
-            // Mostrar imagen
             ImageIcon img;
 
             if (itemEncontrado instanceof Movie m) {
@@ -159,7 +157,6 @@ public class VentanaRentar extends JFrame {
                     JOptionPane.INFORMATION_MESSAGE
             );
 
-            // Volver al menú
             menu.setVisible(true);
             dispose();
 

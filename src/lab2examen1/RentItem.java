@@ -18,12 +18,11 @@ public abstract class RentItem {
     protected int cantidadCopias;
     protected ImageIcon imagen;
 
-    public RentItem(int codigoItem, String nombreItem, double precioBaseRenta, int cantidadCopias, ImageIcon imagen) {
+    public RentItem(int codigoItem, String nombreItem, double precioBaseRenta) {
         this.codigoItem = codigoItem;
         this.nombreItem = nombreItem;
         this.precioBaseRenta = precioBaseRenta;
         this.cantidadCopias=0;
-        this.imagen=imagen;
     }
 
     public int getCodigoItem() {
@@ -43,7 +42,7 @@ public abstract class RentItem {
         return "Codigo de Item: "+codigoItem+"\n Nombre de Item: "+nombreItem+"\n Precio Base Renta de Item: "+precioBaseRenta+" Cantidad de copias Disponibles: "+cantidadCopias;
     }
     
-    protected abstract double pagoRenta();
+    protected abstract double pagoRenta(int dias);
           
     
 }

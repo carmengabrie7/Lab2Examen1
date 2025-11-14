@@ -9,6 +9,7 @@ package lab2examen1;
  * @author Gabriel
  */
 public interface MenuActions {
+    
     void submenu();
     void ejecutarOpcion(int opcion);
 }

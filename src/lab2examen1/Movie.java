@@ -30,7 +30,7 @@ public class Movie extends RentItem {
     
     public String getEstado(){
       LocalDate hoy = LocalDate.now();
-      LocalDate limite = fechasEstreno.plus3months;
+      LocalDate limite = fechaEstreno.plus3months;
     }
     
     @Override

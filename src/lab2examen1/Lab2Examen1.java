@@ -4,6 +4,8 @@
  */
 package lab2examen1;
 
+import javax.swing.SwingUtilities;
+
 /**
  *
  * @author DELL
@@ -14,7 +16,11 @@ public class Lab2Examen1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        SwingUtilities.invokeLater(() -> {
+            new VentanaMenuPrincipal().setVisible(true);
+        });
+        
     }
     
 }

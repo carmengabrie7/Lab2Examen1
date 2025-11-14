@@ -6,6 +6,7 @@ package lab2examen1;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 /**
  *
@@ -18,8 +19,10 @@ public class VentanaMenuPrincipal extends JFrame {
     private JButton btnSubmenu;
     private JButton btnImprimir;
     private JButton btnSalir;
+private ArrayList<RentItem> items;
 
-    public VentanaMenuPrincipal() {
+    public VentanaMenuPrincipal(ArrayList<RentItem> items) {
+        this.items = items;
         initUI();
     }
 
@@ -115,7 +118,10 @@ public class VentanaMenuPrincipal extends JFrame {
         fondo.add(panelCentro, BorderLayout.CENTER);
 
       
-        btnAgregar.addActionListener(e -> System.out.println("Agregar Item"));
+        btnAgregar.addActionListener(e -> {
+                    new VentanaAgregarItem(items, this).setVisible(true);
+    this.dispose(); 
+        });
         btnRentar.addActionListener(e -> System.out.println("Rentar"));
         btnSubmenu.addActionListener(e -> System.out.println("Submenu"));
         btnImprimir.addActionListener(e -> System.out.println("Imprimir"));

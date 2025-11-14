@@ -4,17 +4,16 @@
  */
 package lab2examen1;
 
+import java.util.ArrayList;
 import javax.swing.SwingUtilities;
 
 /**
  *
  * @author DELL
  */
-public class Lab2Examen1 {
-
-    /**
-     * @param args the command line arguments
-     */
+public class MainGUI {
+    protected ArrayList<RentItem> items = new ArrayList<>();
+    
     public static void main(String[] args) {
         
         SwingUtilities.invokeLater(() -> {

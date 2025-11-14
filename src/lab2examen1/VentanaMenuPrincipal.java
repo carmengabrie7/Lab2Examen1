@@ -17,6 +17,7 @@ public class VentanaMenuPrincipal extends JFrame {
     private JButton btnRentar;
     private JButton btnSubmenu;
     private JButton btnImprimir;
+    private JButton btnSalir;
 
     public VentanaMenuPrincipal() {
         initUI();
@@ -56,7 +57,9 @@ public class VentanaMenuPrincipal extends JFrame {
        //Imagen
         JLabel lblLogo = new JLabel();
         lblLogo.setHorizontalAlignment(SwingConstants.CENTER);
-        ImageIcon icon = new ImageIcon("ImagenLogo.png");
+
+        ImageIcon icon = new ImageIcon("src/lab2examen1/logo.png");
+
         lblLogo.setIcon(icon);
 
         panelLogo.add(lblLogo, BorderLayout.CENTER);
@@ -82,9 +85,22 @@ public class VentanaMenuPrincipal extends JFrame {
         panelBotones.setLayout(new BoxLayout(panelBotones, BoxLayout.Y_AXIS));
 
         btnAgregar  = crearBoton("Agregar Item");
+        btnAgregar.setFont(new Font("seriff", Font.BOLD, 15));
         btnRentar   = crearBoton("Rentar");
+        btnRentar.setFont(new Font("seriff", Font.BOLD, 15));
         btnSubmenu  = crearBoton("Submenu");
+        btnSubmenu.setFont(new Font("seriff", Font.BOLD, 15));
         btnImprimir = crearBoton("Imprimir");
+        btnImprimir.setFont(new Font("seriff", Font.BOLD, 15));
+        btnSalir = crearBoton ("Salir");
+        
+        fondo.add(btnSalir);
+        btnSalir.setBounds(20, 10, 100, 40);
+        btnSalir.setFont(new Font("seriff", Font.BOLD, 12));
+        btnSalir.addActionListener(e -> System.exit(0));
+       
+        
+        
 
         panelBotones.add(btnAgregar);
         panelBotones.add(Box.createVerticalStrut(20));
@@ -108,15 +124,15 @@ public class VentanaMenuPrincipal extends JFrame {
     private JButton crearBoton(String texto) {
         JButton btn = new JButton(texto);
         btn.setAlignmentX(Component.CENTER_ALIGNMENT);
-        btn.setFont(new Font("Segoe UI", Font.BOLD, 26));
         btn.setForeground(Color.WHITE);
         btn.setBackground(new Color(80, 80, 80));
         btn.setFocusPainted(false);
         btn.setBorderPainted(false);
         btn.setOpaque(true);
         btn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btn.setPreferredSize(new Dimension(280, 70));
-        btn.setMaximumSize(new Dimension(280, 70));
+        btn.setPreferredSize(new Dimension(200, 60));
+        btn.setMaximumSize(new Dimension(200, 60));
         return btn;
     }
+    
 }

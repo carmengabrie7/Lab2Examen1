@@ -8,6 +8,14 @@ package lab2examen1;
  *
  * @author eduar
  */
-public class VentanaImprimirTodo {
+
+import javax.swing.*;
+import java.awt.*;
+import java.util.ArrayList;
+
+public class VentanaImprimirTodo extends JFrame {
+    
+    
+    
     
 }

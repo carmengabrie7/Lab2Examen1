@@ -122,9 +122,16 @@ private ArrayList<RentItem> items;
                     new VentanaAgregarItem(items, this).setVisible(true);
     this.dispose(); 
         });
-        btnRentar.addActionListener(e -> System.out.println("Rentar"));
+        btnRentar.addActionListener(e -> {
+    new VentanaRentar(items, this).setVisible(true);
+    this.setVisible(false); // ocultamos el menú mientras rentamos
+});
+
         btnSubmenu.addActionListener(e -> System.out.println("Submenu"));
-        btnImprimir.addActionListener(e -> System.out.println("Imprimir"));
+        btnImprimir.addActionListener(e -> {
+    new VentanaImprimirTodo(items, this).setVisible(true);
+    this.setVisible(false);
+});
     }
 
     private JButton crearBoton(String texto) {

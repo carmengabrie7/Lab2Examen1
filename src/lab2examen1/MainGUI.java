@@ -10,7 +10,7 @@ import javax.swing.SwingUtilities;
  *
  * @author DELL
  */
-public class Lab2Examen1 {
+public class MainGUI {
 
     /**
      * @param args the command line arguments

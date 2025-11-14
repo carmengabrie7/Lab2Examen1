@@ -26,14 +26,14 @@ public class VentanaMenuPrincipal extends JFrame {
         setTitle("MediaTrack");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 500);
-        setLocationRelativeTo(null);  // Centrar ventana
+        setLocationRelativeTo(null);  
 
-        // Panel de fondo
+
         JPanel fondo = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                // Fondo degradado azul claro
+               
                 Graphics2D g2 = (Graphics2D) g;
                 g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                         RenderingHints.VALUE_ANTIALIAS_ON);
@@ -48,26 +48,26 @@ public class VentanaMenuPrincipal extends JFrame {
         fondo.setBorder(BorderFactory.createEmptyBorder(30, 60, 30, 60));
         setContentPane(fondo);
 
-        // --------- Panel IZQUIERDO: Logo ----------
+       
         JPanel panelLogo = new JPanel();
         panelLogo.setOpaque(false);
         panelLogo.setLayout(new BorderLayout());
 
-        // Carga tu imagen aquí (reemplaza "logo.png" por tu archivo)
+       //Imagen
         JLabel lblLogo = new JLabel();
         lblLogo.setHorizontalAlignment(SwingConstants.CENTER);
-        ImageIcon icon = new ImageIcon("logo.png"); // tu icono de claqueta + control
+        ImageIcon icon = new ImageIcon("ImagenLogo.png");
         lblLogo.setIcon(icon);
 
         panelLogo.add(lblLogo, BorderLayout.CENTER);
         fondo.add(panelLogo, BorderLayout.WEST);
 
-        // --------- Panel CENTRAL: Título + Botones ----------
+        
         JPanel panelCentro = new JPanel();
         panelCentro.setOpaque(false);
         panelCentro.setLayout(new BoxLayout(panelCentro, BoxLayout.Y_AXIS));
 
-        // Título
+        
         JLabel lblTitulo = new JLabel("MediaTrack");
         lblTitulo.setFont(new Font("Segoe UI", Font.BOLD, 48));
         lblTitulo.setForeground(new Color(70, 70, 70));
@@ -98,8 +98,7 @@ public class VentanaMenuPrincipal extends JFrame {
 
         fondo.add(panelCentro, BorderLayout.CENTER);
 
-        // Aquí puedes agregar los listeners de cada botón
-        // (por ahora solo ejemplos vacíos)
+      
         btnAgregar.addActionListener(e -> System.out.println("Agregar Item"));
         btnRentar.addActionListener(e -> System.out.println("Rentar"));
         btnSubmenu.addActionListener(e -> System.out.println("Submenu"));

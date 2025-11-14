@@ -35,10 +35,6 @@ public class Movie extends RentItem {
     }
     
     public String getEstado(){
-<<<<<<< HEAD
-      LocalDate hoy = LocalDate.now();
-      LocalDate limite = fechaEstreno.plus3months;
-=======
       Calendar hoy = Calendar.getInstance();
       Calendar limite = (Calendar) fechaEstreno.clone();
       limite.add(Calendar.MONTH, 3);
@@ -47,7 +43,6 @@ public class Movie extends RentItem {
       } else{
           return "NORMAL";
       }
->>>>>>> 6eb6aa02583e8c3ad94e05c6fb62108566143935
     }
     
     @Override
